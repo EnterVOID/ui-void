@@ -1,0 +1,20 @@
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+@import "../../../sass/variables";
+
+.filter-bar {
+  .icon {
+    cursor: pointer;
+    color: $grey-lighter;
+
+    &:hover {
+      color: $grey-light;
+    }
+
+    &.is-active {
+      color: $void-red;
+    }
+  }
+}
