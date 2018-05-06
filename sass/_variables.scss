@@ -21,3 +21,7 @@ $linkedin: #0077b5;
 $linkedin-invert: findColorInvert($linkedin);
 $twitter: #55acee;
 $twitter-invert: findColorInvert($twitter);
+
+
+// New colors for elements
+$card-shadow-hover: 0 2px 3px rgba($black, 0.25), 0 0 0 1px rgba($primary, 1);

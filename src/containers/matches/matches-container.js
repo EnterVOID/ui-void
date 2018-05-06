@@ -67,7 +67,7 @@ class Matches extends Component {
 
       return (
         <div className={this.renderMatchClasses(vMatch.comics)} key={vMatch.id}>
-          <article className="card">
+          <article className="matchup card">
             <div className="card-content">
               <div className="content">
                 {title}

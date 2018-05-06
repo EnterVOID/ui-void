@@ -35,7 +35,7 @@ class Characters extends Component {
 
   renderCharacterCardGridItem(url, character) {
     return (
-      <article className="card">
+      <article className="card character">
         <div className="card-image">
           <figure className="image is-4by3">
             <img src={`${url}/${character.icon.path}/${character.icon.filename}`} alt={`thumbnail for ${character.name}`} />
