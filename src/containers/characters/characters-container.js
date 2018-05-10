@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 import Pagination from '../../components/pagination/pagination-component';
 import FilterBar from '../../components/filter-bar/filter-bar-component';
+import Loader from '../../components/loader/loader-component';
 import { getCharacters } from '../../actions/characters';
 
 
@@ -99,7 +100,7 @@ class Characters extends Component {
     const display = (type) => { this.setState({ display: type }) };
 
     if (!list && !total) {
-      return (<div>Loading...</div>);
+      return (<Loader />);
     }
 
     return (

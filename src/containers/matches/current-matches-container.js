@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { buildCurrentLineUp } from '../../actions/matches';
 import Tabs from '../../components/tabs/tabs-component';
+import Loader from '../../components/loader/loader-component';
 
 import '../home/matchup-block.css';
 
@@ -86,7 +87,7 @@ class CurrentMatches extends Component {
     const { matches } = this.props;
 
     if (!matches) {
-      return (<div>Loading...</div>);
+      return (<Loader />);
     }
 
     return (

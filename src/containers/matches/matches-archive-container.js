@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Pagination from '../../components/pagination/pagination-component';
 import FilterBar from '../../components/filter-bar/filter-bar-component';
 import Tabs from '../../components/tabs/tabs-component';
+import Loader from '../../components/loader/loader-component';
 import { getMatches } from '../../actions/matches';
 
 
@@ -100,7 +101,7 @@ class MatchArchive extends Component {
     const display = (type) => { this.setState({ display: type }) };
 
     if (!list && !total) {
-      return (<div>Loading...</div>);
+      return (<Loader />);
     }
 
     return (
