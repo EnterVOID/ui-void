@@ -25,12 +25,12 @@ class Navbar extends Component {
                   onClick={this.props.toggle}>
                   Home
                 </Link>
-                <Link to="/comics"
+                <Link to="/comics/"
                   className="navbar-item"
                   onClick={this.props.toggle}>
                   Comics
                 </Link>
-                <Link to="/characters"
+                <Link to="/characters/"
                   className="navbar-item"
                   onClick={this.props.toggle}>
                   Characters
