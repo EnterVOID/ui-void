@@ -14,7 +14,7 @@ const supportsHistory = 'pushState' in window.history;
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>
       <BrowserRouter forceRefresh={!supportsHistory}>
         <App />
       </BrowserRouter>

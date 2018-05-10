@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 import Pagination from '../../components/pagination/pagination-component';
 import FilterBar from '../../components/filter-bar/filter-bar-component';
+import Tabs from '../../components/tabs/tabs-component';
 import { getMatches } from '../../actions/matches';
 
 
-class Matches extends Component {
+class MatchArchive extends Component {
 
   constructor(props) {
     super(props);
@@ -80,6 +81,18 @@ class Matches extends Component {
     });
   }
 
+  tabItems() {
+    return [
+      {
+        name: 'Current',
+        linkTo: '/comics/',
+      }, {
+        name: 'All',
+        linkTo: '/comics/archive/',
+      }
+    ];
+  }
+
   render() {
     const { list, total } = this.props.matches;
     const { page } = this.props.match.params;
@@ -106,11 +119,13 @@ class Matches extends Component {
         </section>
         <section className="section">
           <div className="container">
-            <FilterBar title="Matches" total={total} display={this.state.display} onDisplayChange={display}></FilterBar>
+            <Tabs tabItems={this.tabItems()} url={this.props.match.url} />
+            <Pagination url="comics" total={total} current={current} />
+            <FilterBar title="Matches" total={total} display={this.state.display} onDisplayChange={display} />
             <div className="columns is-multiline">
               {this.renderMatches(display)}
             </div>
-            <Pagination url="comics" total={total} current={current}></Pagination>
+            <Pagination url="comics" total={total} current={current} />
           </div>
         </section>
       </div>
@@ -122,4 +137,4 @@ function mapStateToProps(state) {
   return { matches: state.matches };
 }
 
-export default connect(mapStateToProps, { getMatches })(Matches);
+export default connect(mapStateToProps, { getMatches })(MatchArchive);

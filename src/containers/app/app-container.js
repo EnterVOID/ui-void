@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar-component';
+import Footer from '../../components/footer/footer-component';
 import Home from '../home/home-container';
-import Matches from '../matches/matches-container';
+import CurrentMatches from '../matches/current-matches-container';
+import MatchArchive from '../matches/matches-archive-container';
 import Characters from '../characters/characters-container';
 import About from '../about/about-container';
 
@@ -25,13 +27,16 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/characters/:page" component={Characters} />
+            <Route path="/characters/:page" component={Characters} />
             <Route exact path="/characters" component={Characters} />
-            <Route exact path="/comics/:page" component={Matches} />
-            <Route exact path="/comics" component={Matches} />
+            <Redirect from="/character" to="/characters"/>
+            <Route exact path="/comics" component={CurrentMatches} />
+            <Route path="/comics/archive/:page" component={MatchArchive} />
+            <Redirect from="/comics/archive" to="/comics/archive/1"/>
             <Redirect from="/comic" to="/comics"/>
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }

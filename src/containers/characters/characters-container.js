@@ -108,7 +108,7 @@ class Characters extends Component {
           <div className="hero-body">
             <div className="container">
               <h1 className="title">
-                Character
+                Characters
               </h1>
               <h2 className="subtitle">
                 Hey, we got <strong>those</strong>, too!
@@ -118,6 +118,7 @@ class Characters extends Component {
         </section>
         <section className="section">
           <div className="container">
+            <Pagination url="characters" total={total} current={current}></Pagination>
             <FilterBar title="Characters" total={total} display={this.state.display} onDisplayChange={display}></FilterBar>
             <div className="columns is-multiline">
               {this.renderCharacters(display)}
