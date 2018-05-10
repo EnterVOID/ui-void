@@ -6,7 +6,6 @@ function renderTabItem(props) {
   const URL = props.url.substring(0, props.url.lastIndexOf("/") + 1);
   return _.map(props.tabItems, item => {
     const linkURL = item.linkTo.substring(0, item.linkTo.lastIndexOf("/") + 1);
-    console.log(`${URL} and ${linkURL}`);
     const returnActive = (URL === linkURL) ? ' is-active' : '';
     return (
       <li className={`tab-item${returnActive}`} key={item.name}>

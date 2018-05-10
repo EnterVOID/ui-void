@@ -62,14 +62,15 @@ class CurrentMatches extends Component {
 
   renderComicBlock(matches) {
     return _.map(matches, matchupBlock => {
-      console.log(matchupBlock);
       if (matchupBlock.results) {
         return (
           <section className="matchup-block" key={matchupBlock.title}>
             <div className="section">
-              {this.renderComicBlockHeader(matchupBlock.title)}
               <div className="container">
                 <Tabs tabItems={this.tabItems()} url={this.props.match.url} />
+              </div>
+              {this.renderComicBlockHeader(matchupBlock.title)}
+              <div className="container">
                 <div className="columns is-multiline">
                   {this.renderMatchup(matchupBlock.results)}
                 </div>

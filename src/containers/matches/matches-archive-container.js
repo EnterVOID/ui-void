@@ -120,12 +120,12 @@ class MatchArchive extends Component {
         <section className="section">
           <div className="container">
             <Tabs tabItems={this.tabItems()} url={this.props.match.url} />
-            <Pagination url="comics" total={total} current={current} />
+            <Pagination url="comics/archive" total={total} current={current} />
             <FilterBar title="Matches" total={total} display={this.state.display} onDisplayChange={display} />
             <div className="columns is-multiline">
               {this.renderMatches(display)}
             </div>
-            <Pagination url="comics" total={total} current={current} />
+            <Pagination url="comics/archive" total={total} current={current} />
           </div>
         </section>
       </div>
