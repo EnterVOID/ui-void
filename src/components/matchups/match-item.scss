@@ -1,0 +1,21 @@
+@import "../sass/variables";
+
+.matchup {
+  height: 100%;
+  position: relative;
+  border: 1px solid $primary-invert;
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+  }
+
+  .matchup-bg-link {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

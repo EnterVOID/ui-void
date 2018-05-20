@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import MatchupItem from './matchup-item-component';
 
 import './matchup-groups.css';
 
@@ -13,28 +14,9 @@ class MatchupGroups extends Component {
   }
 
   renderMatchup(matches) {
-    return _.map(matches, vMatch => {
-      let title;
-      let subtitle;
-
-      if (vMatch.title) {
-        title = <h3 className="title is-5">{vMatch.title}</h3>;
-        subtitle = <h4 className="subtitle is-6">{vMatch.auto_title}</h4>;
-      } else {
-        title = <h3 className="title is-5">{vMatch.auto_title}</h3>;
-      }
-
+    return _.map(matches, singleMatch => {
       return (
-        <div className="column is-full" key={vMatch.id}>
-          <article className="matchup card">
-            <div className="card-content">
-              <div className="content">
-                {title}
-                {subtitle}
-              </div>
-            </div>
-          </article>
-        </div>
+        <MatchupItem key={singleMatch.id} singleMatch={singleMatch} display="list" />
       );
     });
   }

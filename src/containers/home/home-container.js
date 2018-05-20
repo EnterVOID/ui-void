@@ -1,9 +1,9 @@
-import _ from 'lodash';
+//import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { buildCurrentLineUp } from '../../actions/matches';
 import Loader from '../../components/loader/loader-component';
-import MatchupGroups from '../../components/matchups/matchup-groups';
+import MatchupGroups from '../../components/matchups/matchup-groups-component';
 
 class Home extends Component {
 

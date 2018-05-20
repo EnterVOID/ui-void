@@ -20,10 +20,6 @@ html {
   background: $background;
 }
 
-.matchup, .character {
+.character {
   height: 100%;
-}
-
-.card:hover {
-  box-shadow: $card-shadow-hover;
 }

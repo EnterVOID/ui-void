@@ -5,6 +5,7 @@ import Footer from '../../components/footer/footer-component';
 import Home from '../home/home-container';
 import CurrentMatches from '../matches/current-matches-container';
 import MatchArchive from '../matches/matches-archive-container';
+import Match from '../matches/match-container';
 import Characters from '../characters/characters-container';
 import About from '../about/about-container';
 
@@ -32,8 +33,9 @@ class App extends Component {
             <Redirect from="/character" to="/characters"/>
             <Route exact path="/comics" component={CurrentMatches} />
             <Route path="/comics/archive/:page" component={MatchArchive} />
+            <Route path="/comic/:id" component={Match} />
             <Redirect from="/comics/archive" to="/comics/archive/1"/>
-            <Redirect from="/comic" to="/comics"/>
+            <Redirect exact from="/comic" to="/comics"/>
           </Switch>
         </main>
         <Footer />

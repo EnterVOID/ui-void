@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { GET_MATCHES, BUILD_CURRENT } from '../actions/matches';
+import { GET_MATCHES, GET_MATCH, BUILD_CURRENT } from '../actions/matches';
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -8,6 +8,8 @@ export default function(state = {}, action) {
         total: action.payload.total,
         list: _.mapKeys(action.payload.data, 'id')
       }
+    case GET_MATCH:
+      return { ...state, [action.payload.id] : action.payload };
     case BUILD_CURRENT:
     return {
       voting: {

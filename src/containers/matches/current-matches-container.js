@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { buildCurrentLineUp } from '../../actions/matches';
 import Tabs from '../../components/tabs/tabs-component';
 import Loader from '../../components/loader/loader-component';
-import MatchupGroups from '../../components/matchups/matchup-groups';
+import MatchupGroups from '../../components/matchups/matchup-groups-component';
 
 class CurrentMatches extends Component {
   componentDidMount() {
