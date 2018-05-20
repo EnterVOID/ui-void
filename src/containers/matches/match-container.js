@@ -50,12 +50,12 @@ class Match extends Component {
     }
     return (
       <article className="hero is-fullheight">
-        <div class="hero-body">
+        <div className="hero-body">
           <div className="container">
             <div className="media">
               {this.grabCharacterIcons(singleMatch.comics)}
             </div>
-            <div class="content">
+            <div className="content">
               {title}
               {subtitle}
             </div>
