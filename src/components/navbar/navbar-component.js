@@ -19,12 +19,7 @@ class Navbar extends Component {
               </div>
             </div>
             <div className={`navbar-menu ${(this.props.open ? 'is-active' : '')}`}>
-              <div className="navbar-end">
-                <Link to="/"
-                  className="navbar-item"
-                  onClick={this.props.toggle}>
-                  Home
-                </Link>
+              <div className="navbar-start">
                 <Link to="/comics/"
                   className="navbar-item"
                   onClick={this.props.toggle}>
@@ -35,6 +30,43 @@ class Navbar extends Component {
                   onClick={this.props.toggle}>
                   Characters
                 </Link>
+              </div>
+              <div className="navbar-end">
+                <div className="navbar-item">
+                  <div className="field is-grouped">
+                    <div className="control">
+                      <Link to="/signin" className="button is-primary">
+                        Signin
+                      </Link>
+                    </div>
+                    <div className="control">
+                      <Link to="/signup" className="button is-primary is-outlined is-inverted">
+                        Join
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="navbar-item has-dropdown is-hoverable">
+                  <Link to="/" className="navbar-link">
+                    Account
+                  </Link>
+
+                  <div className="navbar-dropdown">
+                    <Link to="/" className="navbar-item">
+                      Overview
+                    </Link>
+                    <Link to="/" className="navbar-item">
+                      Elements
+                    </Link>
+                    <Link to="/" className="navbar-item">
+                      Components
+                    </Link>
+                    <hr className="navbar-divider" />
+                    <div className="navbar-item">
+                      Version 0.7.1
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

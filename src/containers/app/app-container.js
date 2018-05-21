@@ -3,6 +3,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar-component';
 import Footer from '../../components/footer/footer-component';
 import Home from '../home/home-container';
+import Signin from '../access/signin-container';
+import Signup from '../access/signup-container';
 import CurrentMatches from '../matches/current-matches-container';
 import MatchArchive from '../matches/matches-archive-container';
 import Match from '../matches/match-container';
@@ -27,6 +29,8 @@ class App extends Component {
         <main key={window.location.href}>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/signin" component={Signin} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/about" component={About} />
             <Route path="/characters/:page" component={Characters} />
             <Route exact path="/characters" component={Characters} />

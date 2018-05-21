@@ -15,11 +15,24 @@ $colors: map-merge($colors, $addColors);
 
 // 6. Import the rest of Bulma
 @import "bulma/bulma";
+@import "bulma-checkradio/dist/bulma-checkradio";
 
 html {
   background: $background;
 }
 
+.box.access {
+  padding: $access-box-padding;
+}
+
+.field .is-checkradio + label {
+  margin: 0;
+}
+
 .character {
   height: 100%;
+}
+
+.footer .logo img {
+  height: 30px;
 }
