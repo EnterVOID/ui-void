@@ -31,6 +31,58 @@ class Match extends Component {
     });
   }
 
+  renderOneThumbnailSet(comic) {
+    return _.map(comic.pages, page => {
+      return (
+        <div key={`page-${page.page_number}`} className="column is-one-fifth">
+          <figure className="image is-2by3">
+            <img src="http://via.placeholder.com/150x100" alt={`thumbnail for page ${page.page_number}`} />
+          </figure>
+        </div>
+      );
+    });
+  }
+
+  formatArray(arr){
+    var outStr = "";
+    if (arr.length === 1) {
+        outStr = arr[0];
+    } else if (arr.length === 2) {
+        //joins all with "and" but no commas
+        //example: "bob and sam"
+        outStr = arr.join(' and ');
+    } else if (arr.length > 2) {
+        //joins all with commas, but last one gets ", and" (oxford comma!)
+        //example: "bob, joe, and sam"
+        outStr = arr.slice(0, -1).join(', ') + ', and ' + arr.slice(-1);
+    }
+    return outStr;
+  }
+
+  grabCharacterNames(characters) {
+    let characterResults = [];
+    for (var i in characters) {
+      characterResults.push(characters[i].name);
+    }
+    return this.formatArray(characterResults);
+  }
+
+  grabMatchThumbnails(comics) {
+    return _.map(comics, comic => {
+      const characterNames = this.grabCharacterNames(comic.characters);
+      return (
+        <section key={comic.id} className="box comic-thumbnail-block">
+          <div className="media">
+            <h2 className="title">{characterNames}</h2>
+          </div>
+          <div className="columns is-multiline is-centered">
+            {this.renderOneThumbnailSet(comic)}
+          </div>
+        </section>
+      );
+    });
+  }
+
   render() {
     const { singleMatch } = this.props;
     let title;
@@ -59,6 +111,7 @@ class Match extends Component {
               {title}
               {subtitle}
             </div>
+            {this.grabMatchThumbnails(singleMatch.comics)}
           </div>
         </div>
       </article>

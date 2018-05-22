@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 import './match-item.css';
 
@@ -46,6 +48,22 @@ function grabCharacterIcons(comics) {
   });
 }
 
+function matchTypeIcon(type) {
+  if (type === 'Death Match') {
+    return (
+      <span className="icon">
+        <i className="fas fa-skull"></i>
+      </span>
+    );
+  } else if (type === 'Trophy Match') {
+    return (
+      <span className="icon">
+        <i className="fas fa-trophy"></i>
+      </span>
+    );
+  }
+}
+
 export default (props) => {
   let title;
   let subtitle;
@@ -67,6 +85,15 @@ export default (props) => {
           <div className="content">
             {title}
             {subtitle}
+            <div className="match-meta">
+              <div className="match-meta-type">
+                {matchTypeIcon(props.singleMatch.type.name)}
+                {props.singleMatch.type.name}
+              </div>
+              <div className="match-meta-end">
+                <strong>Ended</strong> on <Moment date={`${props.singleMatch.due_date}-0700`} format="MMMM Do, YYYY h:mma" />
+              </div>
+            </div>
           </div>
         </div>
         <Link className="matchup-bg-link" to={`/comic/${props.singleMatch.id}`} />
