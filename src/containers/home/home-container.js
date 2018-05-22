@@ -27,7 +27,7 @@ class Home extends Component {
                 Hello World
               </h1>
               <h2 className="subtitle">
-                My first website with <strong>Bulma</strong>!
+                Step into the <strong>Void</strong>!
               </h2>
             </div>
           </div>

@@ -35,9 +35,9 @@ class CurrentMatches extends Component {
         <section className="hero is-primary is-medium is-bold">
           <div className="hero-body">
             <div className="container">
-              <h1 className="title">Hello World</h1>
+              <h1 className="title">Wow, Comics</h1>
               <h2 className="subtitle">
-                My first website with <strong>Bulma</strong>!
+                That's cool, <strong>I guess</strong>.
               </h2>
             </div>
           </div>
